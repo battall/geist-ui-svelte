@@ -1,0 +1,25 @@
+## Introduction
+
+### About
+
+`localport/geist-ui` is a Svelte implementation for [styles](https://github.com/geist-org/style)
+originating from [Vercel's design](https://vercel.co/design).
+
+The design of **Vercel** is concise and aesthetic, this is an important reason for popularity of Vercel.
+Now you can implement the styles in your own React project.
+
+Geist UI is an open-source design system for building modern websites and applications, all our projects are open source.
+
+<br>
+
+### Contact
+
+- [Chat on Spectrum](https://spectrum.chat/geist-ui/svelte?tab=posts)
+- [Report an issue](https://github.com/geist-org/svelte/issues/new)
+- Welcome share your feedback and ideas. We also love PRs.
+
+<br>
+
+### License
+
+Licensed under the [MIT LICENSE](https://github.com/geist-org/svelte/blob/master/LICENSE).

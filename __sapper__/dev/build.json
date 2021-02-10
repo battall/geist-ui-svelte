@@ -1,0 +1,27 @@
+{
+  "bundler": "rollup",
+  "shimport": "2.0.5",
+  "assets": {
+    "main": "client.035784c7.js"
+  },
+  "css": {
+    "main": [
+      "client-54339c40.css"
+    ]
+  },
+  "dependencies": {
+    "index.svelte": [
+      "index.68df022b.js",
+      "inject_styles.5607aec6.js"
+    ],
+    "installation.svx": [
+      "installation.58415d83.js",
+      "inject_styles.5607aec6.js",
+      "installation-b4e8b443.css"
+    ],
+    "introduction.svx": [
+      "introduction.aee27d83.js",
+      "inject_styles.5607aec6.js"
+    ]
+  }
+}

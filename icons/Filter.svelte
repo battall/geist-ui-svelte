@@ -1,0 +1,1 @@
+<script>export let color = "currentColor"; export let size = 24;</script><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" shape-rendering="geometricPrecision" viewBox="0 0 24 24" {...$$restProps} height={size} width={size} style="color: {color};"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>

@@ -1,0 +1,94 @@
+<script>
+  import { Dot, Spacer } from  "../../";
+</script>
+
+## Installation
+
+### Install library
+
+Ensure your have the latest version of [NodeJS](https://nodejs.org/en/download/),
+and a package manager: [NPM](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/).
+
+<Spacer y={1} />
+<Dot type="success" /> 1. Run script to download:
+<Spacer y={0.8} />
+<Tabs initialValue="yarn" hideDivider>
+  <Tabs.Item label="Yarn" value="yarn">
+    <Snippet width="400px">yarn add @geist-ui/react</Snippet>
+  </Tabs.Item>
+  <Tabs.Item label="Npm" value="npm">
+    <Snippet width="400px">npm i @geist-ui/react</Snippet>
+  </Tabs.Item>
+</Tabs>
+<Spacer y={1.5} />
+<Dot type="success" /> 2. Import package to your project:
+
+<Grid.Container>
+<Grid xs={24} sm={16}>
+
+```jsx
+import { GeistProvider, CssBaseline } from "@geist-ui/react";
+
+const Application = () => (
+  <GeistProvider>
+    <CssBaseline /> // ---> Normalize styles
+    <AppComponent /> // ---> Your App Component
+  </GeistProvider>
+);
+```
+
+</Grid>
+</Grid.Container>
+<Spacer y={.5} />
+<Dot type="success" /> 3. Use the Geist UI components anywhere:
+
+<Grid.Container>
+<Grid xs={24} sm={16}>
+
+```jsx
+import { Button } from "@geist-ui/react";
+
+const MyComponent = () => <Button>Click Me</Button>;
+```
+
+</Grid>
+</Grid.Container>
+
+<Spacer y={1.5} />
+
+### Single component
+
+Geist UI supports importing single, specific components when you need them. This is referred to as `tree-shaking`.
+
+E.g.
+
+<Grid.Container>
+<Grid xs={24} sm={16}>
+
+```jsx
+import Button from "@geist-ui/react/esm/button";
+
+const MyComponent = () => <Button>Click Me</Button>;
+```
+
+</Grid>
+</Grid.Container>
+
+<Spacer y={1.5} />
+
+### Create React App
+
+A React project created by <Link color target="_blank" rel="nofollow" href="https://github.com/facebook/create-react-app">create-react-app</Link> can
+also easily use `@geist-ui/react`. You don't need to make any changes, just install and use. We have <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react-getting-started">a
+sample project related to create react app here</Link>.
+
+If you want to eject certain configs, `tree-shaking`, please refer to <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react/blob/master/examples/tree-shaking-create-react-app/README.md">this example</Link>.
+
+<Spacer y={2.5} />
+
+### Next.js
+
+In the `next.js` project, you need to customize the <Link target="_blank" color rel="nofollow" href="https://nextjs.org/docs/advanced-features/custom-app">app.jsx</Link> entry file to load the provider.
+Start your NextJS project with <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react/blob/master/examples/create-next-app/README.md">this example</Link>.
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
