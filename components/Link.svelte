@@ -7,10 +7,10 @@
 </script>
 
 <a
-  class={`link 
-  ${color ? "color" : ""}
-  ${underline ? "underline" : ""} 
-  ${block ? "block" : ""} `}
+  class={`link`}
+  class:color
+  class:underline
+  class:block
   {href}
   {...$$restProps}
 >
