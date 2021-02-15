@@ -6,19 +6,56 @@
   export let disabled = false;
   export let prefix = "";
   export let suffix = "";
+
+  import { createEventDispatcher } from "svelte";
+
+  let ripples = [];
+
+  const dispatch = createEventDispatcher();
+  const handleClick = (event) => {
+    dispatch("click", event); // Emit "click" event to parent
+
+    return;
+    // ANANI SİKEYİM DRIP/RIPPLE. 15.02.21
+    // https://svelte.dev/repl/dbf681d6ba014f1d9cfc919f1bc59481?version=3.19.2
+    // https://codepen.io/takaneichinose/pen/KJVLqm
+    let el = event.target;
+    let pos = el.getBoundingClientRect();
+
+    const limitX = Math.max(event.offsetX, pos.width - event.offsetX);
+    const limitY = Math.max(event.offsetY, pos.height - event.offsetY);
+    const limit = Math.max(limitX, limitY);
+    const scale = limit / 9;
+
+    let ripple = {
+      id: Math.random().toString().slice(2),
+      x: Math.floor(event.clientX - pos.left),
+      y: Math.floor(event.clientY - pos.top),
+      scale,
+    };
+    ripples = [...ripples, ripple];
+    setTimeout(() => {
+      ripples = ripples.filter((r) => r.id !== ripple.id);
+    }, 1250);
+  };
 </script>
 
 <button
-  class={`button ${type} ${size} ${auto ? "auto" : ""}`}
+  class={`button ${type} ${size}`}
+  class:auto
   type={htmlType}
   {disabled}
-  on:click
+  on:click={handleClick}
   {...$$restProps}
 >
-  <div class={`text ${false ? "right" : "left"}`}>
-    <slot />
-  </div></button
->
+  <slot />
+  {#each ripples as ripple}
+    <div
+      class="ripple"
+      style={`top: ${ripple.x}px; left: ${ripple.y}px; translate(-50%, -50%) scale(${ripple.scale});`}
+    />
+  {/each}
+</button>
 
 <style>
   .button {
@@ -169,9 +206,7 @@
     align-items: center;
     text-align: center;
     line-height: inherit;
-    top: -2px;
   }
-
   .button .text .left {
     padding-left: 0;
   }
@@ -182,5 +217,20 @@
   :global(.button .text pre),
   :global(.button .text div) {
     margin: 0;
+  }
+
+  .button .ripple {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.25);
+    animation: ripple 1.25s ease-out;
+  }
+  @keyframes ripple {
+    to {
+      transform: scale(50);
+      opacity: 0;
+    }
   }
 </style>
