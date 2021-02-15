@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Geist UI
 
 [Geist UI](https://github.com/geist-org/react) for Svelte
@@ -22,3 +23,8 @@ You can create a package that exports multiple components by adding them to the 
 
 - [ ] Button Drip
 - [ ] Better Docs
+=======
+# geist-ui
+
+Geist UI Clone but for svelte, with more css orianted rather than using js and custom classes, we use real classes like a boss ;)
+>>>>>>> 4d1f17266a4c75e9f6bc88cdc4f27268a59aa0ce
