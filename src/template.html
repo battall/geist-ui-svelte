@@ -9,16 +9,15 @@
     %sapper.base%
 
     <script type="text/javascript">
-      let theme = {};
-      theme.stored = window.localStorage.getItem("theme");
-      theme.system = window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
+      let theme = window.localStorage.getItem("theme");
+      if (!theme) {
+        theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+        window.localStorage.setItem("theme", theme);
+      }
 
-      if (
-        theme.stored === "dark" || // If user selected dark or
-        (!theme.stored && theme.system === "dark") // If user didn't selected anything, but system is dark
-      ) {
+      if (theme === "dark") {
         // if theme is dark, set background and data-theme
         document.documentElement.setAttribute("data-theme", "dark");
         document.documentElement.style.background = "#000";
