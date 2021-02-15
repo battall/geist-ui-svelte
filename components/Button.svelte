@@ -17,6 +17,7 @@
 
     return;
     // ANANI SİKEYİM DRIP/RIPPLE. 15.02.21
+    // TTEN
     // https://svelte.dev/repl/dbf681d6ba014f1d9cfc919f1bc59481?version=3.19.2
     // https://codepen.io/takaneichinose/pen/KJVLqm
     let el = event.target;
