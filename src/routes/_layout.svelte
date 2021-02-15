@@ -11,6 +11,7 @@
   onMount(() => {
     $session.theme = window.localStorage.getItem("theme");
     session.subscribe((data) => {
+      window.localStorage.setItem("theme", data.theme);
       document.documentElement.setAttribute("data-theme", data.theme);
     });
   });
