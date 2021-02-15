@@ -17,3 +17,8 @@ run `npm dev` and start editing files in components
 component's source code lives in `components/`.
 
 You can create a package that exports multiple components by adding them to the `components` directory and editing `components/index.js` to reexport them as named exports.
+
+###### important things need to be done
+
+- [ ] Button Drip
+- [ ] Better Docs
