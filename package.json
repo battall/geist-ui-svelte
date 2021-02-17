@@ -1,7 +1,7 @@
 {
   "name": "geist-ui",
   "version": "0.0.2",
-  "svelte": "components/index.js",
+  "svelte": "index.js",
   "scripts": {
     "dev": "sapper dev --ext '.svelte .svx'",
     "build": "sapper export --ext '.svelte .svx'",
