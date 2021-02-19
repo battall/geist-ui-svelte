@@ -1,17 +1,25 @@
 <script>
   export let defaultValue = "";
   export let prefix = "";
+  export let value = "";
+
+  // Just for prefix... so much boilerplate maybe but i can't find another way to do that
+  import { setContext } from "svelte";
+  setContext("select", {
+    prefix,
+    setPrefix: (p) => (prefix = p),
+  });
 
   import IconChevronUpDown from "../icons/ChevronUpDown.svelte";
 </script>
 
-<div {...$$restProps} class="container">
+<div class="container" {...$$restProps}>
   {#if !!prefix}
     <div class="prefix">
       <svelte:component this={prefix} size={16} />
     </div>
   {/if}
-  <select {defaultValue} on:blur>
+  <select {defaultValue} bind:value>
     <slot />
   </select>
   <div class="suffix">
