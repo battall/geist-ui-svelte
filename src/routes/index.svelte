@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from "svelte";
   import { goto } from "@sapper/app";
-  goto("/introduction", { replaceState: true });
+  onMount(() => goto("/introduction", { replaceState: true }));
 </script>

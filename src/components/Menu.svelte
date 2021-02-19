@@ -8,7 +8,6 @@
   const { session } = stores();
 
   import { Button, Link, IconMoon, IconSun } from "../../";
-  import Activity from "../../icons/Activity.svelte";
 
   $: if (process.browser) {
     document.body.style.overflow = isOpen ? "hidden" : "";

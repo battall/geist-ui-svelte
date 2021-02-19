@@ -20,5 +20,12 @@ You can create a package that exports multiple components by adding them to the 
 
 ###### important things need to be done
 
+- [x] Select on:change is not usable
+      Now bind is usable, which uses on:change in the background
+- [x] Select prefix
+      Done with context, which is a bit messy
 - [ ] Button Drip
 - [ ] Better Docs
+- [x] Icons look thin and sharper, on geist-ui it looks a bit bolder
+      Fix: fixed, but how? the transpiling process was taking icon properties like borderWidth (JSX style) etc, but not changing to border-width. so html couldn't understand these.
+- [ ] Button And Input, Prefix - Suffix

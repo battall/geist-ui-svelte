@@ -8,10 +8,10 @@
   export let suffix = "";
 
   import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
 
   let ripples = [];
 
-  const dispatch = createEventDispatcher();
   const handleClick = (event) => {
     dispatch("click", event); // Emit "click" event to parent
 
