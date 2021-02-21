@@ -25,7 +25,8 @@ You can create a package that exports multiple components by adding them to the 
 - [x] Select prefix
       Done with context, which is a bit messy
 - [ ] Button Drip
+- [ ] Button And Input, Prefix - Suffix
+- [x] Collapse
 - [ ] Better Docs
 - [x] Icons look thin and sharper, on geist-ui it looks a bit bolder
       Fix: fixed, but how? the transpiling process was taking icon properties like borderWidth (JSX style) etc, but not changing to border-width. so html couldn't understand these.
-- [ ] Button And Input, Prefix - Suffix

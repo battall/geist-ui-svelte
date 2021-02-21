@@ -1,0 +1,68 @@
+<script>
+  import Playground from "../components/Playground.svelte";
+  import { Collapse, CollapseGroup, Spacer } from "../../";
+</script>
+
+<Spacer y={2} />
+
+# Collapse
+
+<h2 style="color: var(--secondary); font-size: 1.25rem; line-height: -.020625rem; font-weight: 400;">Display large amounts of text in collapsible sections. Commonly referred to as an accordion.</h2>
+
+<Spacer y={3.5} />
+
+<Playground>
+  <CollapseGroup>
+    <Collapse title='Question A'>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </Collapse>
+    <Collapse title='Question B'>
+      <p>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+        fugiat nulla pariatur.
+      </p>
+    </Collapse>
+  </CollapseGroup>
+</Playground>
+
+<Playground title="Subtitle">
+  <CollapseGroup>
+    <Collapse title='Question A' subtitle="More description about Question A">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </Collapse>
+    <Collapse title='Question B'>
+      <p>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+        fugiat nulla pariatur.
+      </p>
+    </Collapse>
+  </CollapseGroup>
+</Playground>
+
+<Playground title="Shadow">
+    <Collapse title='Question A' shadow>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </Collapse>
+</Playground>
+
+<Playground title="Small">
+    <Collapse title='Question A' size="small">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </Collapse>
+</Playground>
