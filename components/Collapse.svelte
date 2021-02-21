@@ -16,8 +16,19 @@
     isOpen = !isOpen;
 
     // means collapse is in a group
-    if (isOpen && groupContext) {
-      groupContext.setCurrentCloseFunction(() => (isOpen = false));
+    if (groupContext) {
+      // If opened by click (is there any other way? nevermind)
+      // If opened by click set closeFunction
+      // If closed by click remove closeFunction so it doesn't gonna close self when user retried to open, ex;
+      // 1) user opens collapse1
+      // 2) user close collapse1
+      // 3) user tries to open collapse1 but because latest close function is collapse1 so it closes self
+      // and collapse1 doesn't open, stuck in a close loop, when clicked collapse2 it works fine and go on
+      // 21.02.21: you dumb Battal, you tried to add ids and etc and overengineering solution.
+      // please be more genius so do it like this, like a genius.
+      isOpen
+        ? groupContext.setCurrentCloseFunction(() => (isOpen = false))
+        : groupContext.setCurrentCloseFunction(() => {});
     }
   };
 </script>
