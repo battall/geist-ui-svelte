@@ -83,7 +83,6 @@
     font-weight: bold;
     text-transform: capitalize;
     background-color: var(--background);
-    z-index: 10;
   }
   .text.left {
     transform: translateY(-50%);
