@@ -36,7 +36,9 @@
 <div class={`collapse ${size}`} class:shadow {...$$restProps}>
   <div class="view" role="button" on:click={handleToggle}>
     <div class="title">
-      <h3>{title}</h3>
+      <slot name="title">
+        <h3>{title}</h3>
+      </slot>
       <svg
         class:isOpen
         viewBox="0 0 24 24"
