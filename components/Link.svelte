@@ -6,14 +6,7 @@
   export let block = false;
 </script>
 
-<a
-  class={`link`}
-  class:color
-  class:underline
-  class:block
-  {href}
-  {...$$restProps}
->
+<a class="link" class:color class:underline class:block {href} {...$$restProps}>
   <slot />
   {#if icon}
     <svg
@@ -21,9 +14,9 @@
       width="1em"
       height="1em"
       stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
       fill="none"
       shapeRendering="geometricPrecision"
       class="icon"
