@@ -1,0 +1,16 @@
+<script>
+  import Playground from "../components/Playground.svelte";
+  
+  import { Button, IconTag } from "../../";
+
+</script>
+
+<br />
+
+## Button
+
+<br />
+
+<Playground>
+  <Button prefix={IconTag} suffix={IconTag}>Button</Button>
+</Playground>

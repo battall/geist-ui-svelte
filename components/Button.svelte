@@ -49,7 +49,22 @@
   on:click={handleClick}
   {...$$restProps}
 >
-  <slot />
+  {#if !!prefix}
+    <span class="prefix">
+      <svelte:component this={prefix} size={16} />
+    </span>
+  {/if}
+
+  <span class="text">
+    <slot />
+  </span>
+
+  {#if !!suffix}
+    <span class="suffix">
+      <svelte:component this={suffix} size={16} />
+    </span>
+  {/if}
+
   {#each ripples as ripple}
     <div
       class="ripple"
@@ -60,19 +75,20 @@
 
 <style>
   .button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     box-sizing: border-box;
-    display: inline-block;
     border-radius: var(--radius);
     font-weight: 400;
     user-select: none;
     outline: none;
     text-transform: capitalize;
-    justify-content: center;
-    text-align: center;
     white-space: nowrap;
     transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
       border 200ms ease 0ms, color 200ms ease 0ms;
-    position: relative;
     overflow: hidden;
 
     cursor: pointer;
@@ -94,6 +110,7 @@
   }
   .button.default:hover,
   .button.default:focus {
+    color: var(--foreground);
     background-color: var(--background);
     border-color: var(--foreground);
   }
@@ -142,11 +159,13 @@
   }
 
   .button.mini {
+    --button-padding: 1.375;
+
     height: 1.5rem;
     line-height: 1.5rem;
     width: initial;
     min-width: 5.25rem;
-    padding: 0 1.375rem;
+    padding: 0 var(--button-padding);
     font-size: 0.75rem;
   }
   .button.small {
@@ -201,12 +220,11 @@
 
   .button .text {
     position: relative;
-    z-index: 1;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     line-height: inherit;
+    margin: 0 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .button .text .left {
     padding-left: 0;
@@ -218,6 +236,17 @@
   :global(.button .text pre),
   :global(.button .text div) {
     margin: 0;
+  }
+
+  .button .prefix,
+  .button .suffix {
+    display: flex;
+  }
+  .button .prefix {
+    margin-right: var(--gap-quarter);
+  }
+  .button .suffix {
+    margin-left: var(--gap-quarter);
   }
 
   .button .ripple {
