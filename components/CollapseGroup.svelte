@@ -4,14 +4,14 @@
   // 21.02.21: I know i know... i am genius
 
   // Close function of current opened accordion
-  let currentCloseFunction = () => {};
+  let closeFunction = () => {};
   // to make accordion work use context, when one collapse opened close others
   import { setContext } from "svelte";
   if (accordion) {
     setContext("collapse", {
-      setCurrentCloseFunction: (closeFunction) => {
-        currentCloseFunction();
-        currentCloseFunction = closeFunction;
+      setCloseFunction: (nextCloseFunction) => {
+        closeFunction();
+        closeFunction = nextCloseFunction;
       },
     });
   }

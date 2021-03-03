@@ -1,0 +1,25 @@
+<script>
+  import Playground from "../components/Playground.svelte";
+  
+  import { Tabs, Tab, TabContent } from "../../";
+
+</script>
+
+<br />
+
+## Tabs
+
+Display tab content.
+
+<br />
+
+<Playground>
+  <Tabs value={1}>
+    <Tab>evil rabbit</Tab>
+    <Tab>jumped</Tab>
+    <div slot="content">
+      <TabContent>The Evil Rabbit Jumped over the Fence.</TabContent>
+      <TabContent>The Fence Jumped over The Evil Rabbit.</TabContent>
+    </div>
+  </Tabs>
+</Playground>
