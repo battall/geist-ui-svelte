@@ -16,6 +16,7 @@
     padding: var(--gap-quarter) calc(0.65 * var(--gap-quarter));
     margin: 0 calc(0.8 * var(--gap-half));
     outline: 0;
+    border-bottom: 2px solid transparent;
     color: var(--accents-6);
     font-size: 1rem;
     white-space: nowrap;
@@ -24,27 +25,12 @@
     cursor: pointer;
     pointer-events: auto;
 
-    transition: background-color 200ms ease, scale 200ms ease;
-  }
-  .tab:after {
-    position: absolute;
-    content: "";
-    bottom: -1px;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 2px;
-    transform: scaleX(0.75);
-    background-color: transparent;
-    transition: all 200ms ease;
+    transition: border-bottom 200ms ease;
   }
 
   .tab.active {
     color: var(--foreground);
-  }
-  .tab.active:after {
-    background-color: var(--foreground);
-    transform: scaleX(1);
+    border-bottom: 2px solid var(--foreground);
   }
   .tab.disabled {
     color: var(--accents-3);
